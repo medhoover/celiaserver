@@ -1,1 +1,0 @@
-<?php return unserialize('a:2:{i:0;O:27:"Doctrine\\ORM\\Mapping\\Entity":2:{s:15:"repositoryClass";s:42:"Med\\CeliaBundle\\Entity\\CategorieRepository";s:8:"readOnly";b:0;}i:1;O:41:"JMS\\Serializer\\Annotation\\ExclusionPolicy":1:{s:6:"policy";s:3:"ALL";}}');
