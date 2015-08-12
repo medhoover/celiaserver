@@ -1,0 +1,6 @@
+{% extends "MedCeliaBundle:Main:template.html.twig" %}
+{% block estajoutproduit %}active{% endblock %}
+{% block titre %} Ajouter un produit {% endblock %}
+{% block contenue %}
+    {% include 'MedCeliaBundle:Produit:addform.html.twig' %}
+{% endblock %}

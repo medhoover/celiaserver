@@ -1,0 +1,61 @@
+{% extends "MedCeliaBundle:Main:template.html.twig" %}
+{% block estajoutproduit %}active{% endblock %}
+{% block titre %} Ajouter un produit {% endblock %}
+{% block contenue %}
+    <div class="row"    >
+        <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="text-muted bootstrap-admin-box-title">Produit</div>
+                                        <div class="pull-right"><span class="badge">{{ produit.id}}</span></div>
+                                    </div>
+                                        <div class="bootstrap-admin-panel-content">
+                                            <div class=" row bootstrap-admin-light-padding-bottom ">
+                                                <img 
+                                                    src="{{ asset(produit.image.webPath) }}"
+                                                    
+                                                  />
+                                            </div>
+                                            <h3>{{ produit.nom }}</h3>
+                                            <h4>Marque: {{ produit.marque.nomMarque }}</h4>
+                                            {% if produit.estAutorise==1 %}
+                                                <button class="btn btn-sm btn-success">
+                                                            <i class="glyphicon glyphicon-ok-sign"></i>
+                                                            Autorisé
+                                                </button>
+                                                
+                                            {% else %}
+                                                <button class="btn btn-sm btn-danger">
+                                                        <i class="glyphicon glyphicon-alert"></i>
+                                                            Non Autorisé
+                                                </button>
+                                                {% endif %}
+                                                <p class=" row bootstrap-admin-light-padding-top ">
+                                                    {{produit.description }}
+                                                </p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+        <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="text-muted bootstrap-admin-box-title">Modifier Le Produit</div>
+                                        <div class="pull-right"><span class="badge">{{ produit.id}}</span></div>
+                                    </div>
+                                        <div class="bootstrap-admin-panel-content">
+                                            <div class=" row bootstrap-admin-light-padding-bottom ">
+                                                
+                                            </div>
+                                            {% include 'MedCeliaBundle:Produit:formedit.html.twig' %}
+                                    </div>
+                                    
+                                </div>
+        </div>
+    </div>
+        
+    </div>
+                                        
+    {{form(form)}}
+    
+{% endblock %}

@@ -1,0 +1,67 @@
+<div class="col-lg-12">
+    <div class="panel panel-default bootstrap-admin-no-table-panel">
+        <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title">Nouveau Produit</div>
+        </div>
+        <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+                <fieldset>
+
+                    {{ form_errors(form) }}
+
+                    <div class="form-group">
+                    {{ form_label(form.nom, "Nom", {'label_attr': {'class': 'col-lg-2 control-label'}}) }}
+                    {{ form_errors(form.nom) }}
+                        <div class="col-lg-10">
+                          {{ form_widget(form.nom, {'attr': {'class': 'col-md-6 form-control'}}) }}
+                        </div>
+                    </div>
+
+                        <div class="form-group">
+                    {{ form_label(form.description, "Description", {'label_attr': {'class': 'col-lg-2 control-label'}}) }}
+                    <div class="col-lg-10">
+                    {{ form_widget(form.description, {'attr': {'class': ' form-control textarea '}}) }}    
+                    {{ form_errors(form.description) }}
+                    </div>
+
+
+
+                        {{ form_label(form.estAutorise, "Autorisé", {'label_attr': {'class': 'col-lg-2 control-label '}}) }}
+                        <div class="col-lg-10">
+                            {{ form_widget(form.estAutorise, {'attr': {'class': ' uniform-on left'}}) }}
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.marque, "Marque", {'label_attr': {'class': 'col-lg-2 control-label'}}) }}
+                        <div class="col-lg-10">
+                            {{ form_widget(form.marque, {'attr': {'class': ' chzn-select chzn-done left '}}) }}
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="col-lg-2 control-label">Image</label>
+                        
+                        {{ form_widget(form.image, {'attr': {'class': 'col-lg-7 '}}) }}
+                        
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_errors(form.estAutorise) }}
+                        {{ form_errors(form.image) }}
+                        {{ form_errors(form.marque) }}
+                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                    </div>
+
+
+                {{ form_rest(form) }}    
+            </fieldset>
+                {{form_end(form)}}
+        </div>
+    </div>
+
+
+</div>

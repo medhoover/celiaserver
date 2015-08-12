@@ -1,0 +1,72 @@
+med_celia_main:
+    path:     main/
+    defaults: { _controller: MedCeliaBundle:Main:index }
+    
+        
+med_celia_delete_cat:
+    path:     main/deletecat/{id}
+    defaults: { _controller: MedCeliaBundle:Main:DeleteCategorie }
+    requirements:
+        id: \d+
+    
+med_celia_delete_marque:
+    path:     main/deletemarque/{id}
+    defaults: { _controller: MedCeliaBundle:Main:DeleteMarque }
+    requirements:
+        id: \d+
+
+med_celia_recette:
+    path:     main/recette
+    defaults: { _controller: MedCeliaBundle:Recette:index }
+
+med_celia_view_recette:
+    path:     main/recette/{id}
+    defaults: { _controller: MedCeliaBundle:Recette:view }
+    requirements:
+        id: \d+
+
+med_celia_delete_recette:
+    path:     main/recette/delete/{id}
+    defaults: { _controller: MedCeliaBundle:Recette:delete }
+    requirements:
+        id: \d+
+
+med_celia_add_recette:
+    path:     main/recette/add
+    defaults: { _controller: MedCeliaBundle:Recette:add }
+    
+med_celia_produit:
+    path:     main/produit
+    defaults: { _controller: MedCeliaBundle:Produit:index }
+
+med_celia_view_produit:
+    path:     main/produit/{id}
+    defaults: { _controller: MedCeliaBundle:Produit:view }
+    requirements:
+        id: \d+
+
+med_celia_delete_produit:
+    path:     main/produit/delete/{id}
+    defaults: { _controller: MedCeliaBundle:Produit:delete }
+    requirements:
+        id: \d+
+
+med_celia_add_produit:
+    path:     main/produit/add
+    defaults: { _controller: MedCeliaBundle:Produit:add }
+    
+
+med_celia_get_produit:
+    pattern:  /produits/
+    defaults: { _controller: MedCeliaBundle:Rest:getAllProduits, _format: json}
+    requirements: { _format: (xml|json), _method: GET }
+
+med_celia_get_recettes:
+    pattern:  /recettes/
+    defaults: { _controller: MedCeliaBundle:Rest:getAllRecettes, _format: json}
+    requirements: { _format: (xml|json), _method: GET }
+    
+med_celia_get_recette:
+    pattern:  /recettes/{id}
+    defaults: { _controller: MedCeliaBundle:Rest:get, _format: json}
+    requirements: { _format: (xml|json), _method: GET , id: \d+}

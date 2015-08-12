@@ -1,0 +1,7 @@
+parameters:
+#    med_celia.example.class: Med\CeliaBundle\Example
+
+services:
+#    med_celia.example:
+#        class: %med_celia.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

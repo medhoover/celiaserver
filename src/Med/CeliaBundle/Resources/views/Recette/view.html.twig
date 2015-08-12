@@ -1,0 +1,52 @@
+{% extends "MedCeliaBundle:Main:template.html.twig" %}
+{% block estajoutrecette %}active{% endblock %}
+{% block contenue %}
+    <div class="row"    >
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="text-muted bootstrap-admin-box-title">Recette</div>
+                    <div class="pull-right"><span class="badge">{{ recette.id}}</span></div>
+                </div>
+                    <div class="bootstrap-admin-panel-content">
+                        <div class=" row bootstrap-admin-light-padding-bottom ">
+                            <img 
+                                src="{{ asset(recette.image.webPath) }}"
+                                style="max-width: 100%;height: auto;"
+                              />
+                        </div>
+                        <h3>{{ recette.nom }}</h3>
+                        <h4>Categorie: {{ recette.categorie.nom }}</h4>
+                        <h4>Temp: {{ recette.temp }} Minutes</h4>
+                        <p class=" row bootstrap-admin-light-padding-top ">
+                            Ingredient: {{recette.ingredients }}
+                        </p>
+                        <p class=" row bootstrap-admin-light-padding-top ">
+                            Direction: {{recette.ingredients }}
+                        </p>
+                    </div>
+            </div>
+                                
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="text-muted bootstrap-admin-box-title">Modifier La Recette</div>
+                    <div class="pull-right"><span class="badge">{{ recette.id}}</span></div>
+                </div>
+                    <div class="bootstrap-admin-panel-content">
+                        <div class=" row bootstrap-admin-light-padding-bottom ">
+
+                        </div>
+                        {% include 'MedCeliaBundle:Recette:formedit.html.twig' %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+        
+    </div>
+                                        
+    {{form(form)}}
+    
+{% endblock %}

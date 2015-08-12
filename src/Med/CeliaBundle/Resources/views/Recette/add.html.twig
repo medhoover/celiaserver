@@ -1,0 +1,6 @@
+{% extends "MedCeliaBundle:Main:template.html.twig" %}
+{% block estajoutrecette %}active{% endblock %}
+{% block titre %} Ajouter une Recette {% endblock %}
+{% block contenue %}
+    {% include 'MedCeliaBundle:Recette:addform.html.twig' %}
+{% endblock %}

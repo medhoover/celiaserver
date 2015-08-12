@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+        
+        
+
+        {% stylesheets
+        '@MedCeliaBundle/Resources/public/css/bootstrap.min.css'
+        '@MedCeliaBundle/Resources/public/css/bootstrap-theme.min.css'
+        '@MedCeliaBundle/Resources/public/css/bootstrap-admin-theme.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+        {% stylesheets
+        output='fonts/glyphicons-halflings-regular.ttf'
+        '@MedCeliaBundle/Resources/public/fonts/glyphicons-halflings-regular.ttf'
+        output='fonts/glyphicons-halflings-regular.woff'
+        '@MedCeliaBundle/Resources/public/fonts/glyphicons-halflings-regular.woff'
+        %}{% endstylesheets %}
+        
+    </head>
+    <body class="bootstrap-admin-with-small-navbar">
+        <!-- small navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
+            <div class="container">
+                <div class="row">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="{{ path('user_logout') }}">Deconnection</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- main / large navbar -->
+        
+        <div class="container">
+            <!-- left, vertical navbar & content -->
+            <div class="row">
+                <!-- left, vertical navbar -->
+                <div class="col-md-2 bootstrap-admin-col-left">
+                    <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                        
+                        <li class="{% block estacceuil %}  {% endblock %}">
+                            <a href="{{ path('med_celia_main')}}"><i class="glyphicon glyphicon-chevron-right"></i> Acceuil</a>
+                        </li>
+                        <li class="{% block estproduit %}  {% endblock %}">
+                            <a href="{{ path('med_celia_produit')}}"><i class="glyphicon glyphicon-chevron-right"></i> Produits</a>
+                        </li>
+                        <li class="{% block estajoutproduit %}  {% endblock %}">
+                            <a href="{{ path('med_celia_add_produit')}}"><i class="glyphicon glyphicon-chevron-right"></i> Ajouter un Produit</a>
+                        </li>
+                        <li class="{% block estrecette %}  {% endblock %}">
+                            <a href="{{ path('med_celia_recette')}}"><i class="glyphicon glyphicon-chevron-right"></i> Recettes</a>
+                        </li>
+                        <li class="{% block estajoutrecette %}  {% endblock %}">
+                            <a href="{{ path('med_celia_add_recette')}}"><i class="glyphicon glyphicon-chevron-right"></i> Ajouter une Recette</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- content -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page-header">
+                                <h1>{% block titre %}{% endblock %}</h1>
+                            </div>
+                        </div>
+                            
+                    </div>
+                            
+
+                            <div class="bootstrap-admin-panel-content text-muted" style="padding: 60px 0; text-align: center">
+                                {% block contenue %} Acceuil {% endblock %}
+                            </div>
+                    </ br>
+                    
+        <!-- footer -->
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        
+        {% javascripts 
+        '@MedCeliaBundle/Resources/public/js/jquery-2.1.4.min.js'
+        '@MedCeliaBundle/Resources/public/js/bootstrap.min.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+       
+        {% endjavascripts %}
+         <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+        
+       
+       
+       
+
+       
+    </body>
+</html>

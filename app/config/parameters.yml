@@ -1,0 +1,13 @@
+parameters:
+    database_host: localhost
+    database_port: null
+    database_name: celialibrary
+    database_user: root
+    database_password: 
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 19a8bb801393022cb4bdbdc99b7fe6ad9117ec60
+    database_driver: pdo_mysql
+    database_path: null

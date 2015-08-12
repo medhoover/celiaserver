@@ -1,0 +1,10 @@
+user_logout:
+       pattern:   /logout
+       
+med_celia:
+    resource: "@MedCeliaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    

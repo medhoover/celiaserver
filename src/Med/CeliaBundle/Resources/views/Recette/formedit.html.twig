@@ -1,0 +1,53 @@
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                                        
+    <fieldset>
+
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+        {{ form_label(form.nom, "Nom", {'label_attr': {'class': 'col-lg-3 control-label'}}) }}
+        {{ form_errors(form.nom) }}
+            <div class="col-md-9">
+              {{ form_widget(form.nom, {'attr': {'class': 'col-md-6 form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+        {{ form_label(form.ingredients, "Ingredients", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+        {{ form_errors(form.ingredients) }}
+            <div class="col-md-9">
+            {{ form_widget(form.ingredients, {'attr': {'class': ' form-control textarea '}})}}     
+            </div>
+        </div>
+        <div class="form-group">
+        {{ form_label(form.direction, "Direction", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+        {{ form_errors(form.direction) }}
+            <div class="col-md-9">
+            {{ form_widget(form.direction, {'attr': {'class': ' form-control textarea '}})}}     
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.temp, "Temp", {'label_attr': {'class': 'col-lg-2 control-label'}}) }}
+            <div class="col-lg-10">
+
+            {{ form_widget(form.temp, {'attr': {'class': 'control-label'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.categorie, "Marque", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+            <div class="col-md-9">
+                {{ form_widget(form.categorie, {'attr': {'class': 'col-md-4 chzn-select chzn-done form-controle left'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-3 control-label" >Image </label>
+            <div class="col-md-9">
+            {{ form_widget(form.image, {'attr': {'class': ''}}) }}     
+            </div>
+        </div>
+            {{ form_errors(form.image) }}
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+{{ form_rest(form) }}    
+{{ form_end(form)}}
